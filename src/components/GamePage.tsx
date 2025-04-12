@@ -1,5 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import NeonCyber from "@/components/Themes/NeonCyber";
 import RetroArcadeGame from "@/components/Themes/Arcade";
 import NatureForestGame from "@/components/Themes/Forest";
@@ -11,7 +12,9 @@ import QuantumGlassGame from "./Themes/QuantumGlassGame";
 import PastelPlaygroundGame from "./Themes/PastelPlaygroundGame";
 import NeonGradientGame from "./Themes/NeonGradientGame";
 import AnimatedGame from "./Themes/Animated";
-export default function GamePage() {
+import Loading from "./Loading";
+
+function GameContent() {
   const searchParams = useSearchParams();
   const theme = searchParams.get("theme");
 
@@ -45,4 +48,12 @@ export default function GamePage() {
   };
 
   return <div>{renderTheme()}</div>;
+}
+
+export default function GamePage() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <GameContent />
+    </Suspense>
+  );
 }
