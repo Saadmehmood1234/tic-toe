@@ -3,10 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import GamePreview from "@/components/GamePreview";
 import { themes } from "@/lib/DATA/theme";
-
+import Footer from "@/components/Footer";
 export default function HomePage() {
   const [hoveredTheme, setHoveredTheme] = useState<number | null>(null);
-  
+
   const features = [
     {
       icon: "🔄",
@@ -53,7 +53,7 @@ export default function HomePage() {
         </section>
 
         <section aria-labelledby="theme-selection-heading">
-          <h2 
+          <h2
             id="theme-selection-heading"
             className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-magenta-500"
           >
@@ -128,8 +128,14 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section aria-labelledby="features-heading" className="mt-20 bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
-          <h2 id="features-heading" className="text-3xl font-bold mb-8 text-center text-cyan-400">
+        <section
+          aria-labelledby="features-heading"
+          className="mt-20 bg-gray-900/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700"
+        >
+          <h2
+            id="features-heading"
+            className="text-3xl font-bold mb-8 text-center text-cyan-400"
+          >
             Game Features
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -138,7 +144,9 @@ export default function HomePage() {
                 key={i}
                 className="bg-gray-800/50 p-6 rounded-lg border border-gray-700 hover:border-cyan-400/50 transition-colors"
               >
-                <div className="text-4xl mb-4" aria-hidden="true">{feature.icon}</div>
+                <div className="text-4xl mb-4" aria-hidden="true">
+                  {feature.icon}
+                </div>
                 <h3 className="text-xl font-bold mb-2 text-magenta-400">
                   {feature.title}
                 </h3>
@@ -149,10 +157,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-gray-400">
-        <p>Created with Next.js, TypeScript, and Tailwind CSS</p>
-        <p className="mt-2">© {new Date().getFullYear()} Tic-Tac-Toe Extreme</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

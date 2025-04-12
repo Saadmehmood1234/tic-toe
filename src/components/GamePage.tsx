@@ -53,6 +53,7 @@ function GameContent() {
 export default function GamePage() {
   return (
     <Suspense fallback={<Loading />}>
+        
       <GameContent />
     </Suspense>
   );
