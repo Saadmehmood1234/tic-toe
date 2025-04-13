@@ -29,8 +29,6 @@ export default function MidnightGalaxyGame() {
   const [stars, setStars] = useState<Array<{id: number, x: number, y: number, size: number}>>([]);
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
-
-  // Create twinkling stars
   useEffect(() => {
     const newStars = [];
     for (let i = 0; i < 50; i++) {
@@ -82,7 +80,6 @@ export default function MidnightGalaxyGame() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-indigo-950 to-gray-900 p-4 flex flex-col items-center justify-center relative overflow-hidden">
-      {/* Animated stars background */}
       {stars.map(star => (
         <div 
           key={star.id}
@@ -132,7 +129,6 @@ export default function MidnightGalaxyGame() {
         <ol className="grid grid-cols-3 gap-2">{moves}</ol>
       </div>
 
-      {/* Animated comet effect */}
       <div className="absolute top-0 left-0 w-2 h-2 bg-blue-400 rounded-full 
         shadow-comet animate-comet z-0" />
     </div>

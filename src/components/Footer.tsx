@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className="max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center text-gray-400">
-      <p>Created with Next.js, TypeScript, and Tailwind CSS</p>
+      <p>Created By: Saad Mehmood</p>
 
       <div className="flex justify-center gap-4 mt-4">
         <Link
